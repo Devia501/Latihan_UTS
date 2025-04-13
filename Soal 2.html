@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bantuan</title>
+    <style>
+        .kotak {
+            border: 1px solid black;
+            padding: 10px;
+            width: fit-content;
+        }
+
+        .Judul {
+            display: inline-block;
+            border-bottom: 1px solid grey;
+            padding-bottom: 1px;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            margin-bottom: 20px;
+        }
+
+        .message {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 100px; 
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="kotak">
+        <div class="Judul">
+            <h2>Jika anda memerlukan bantuan, Silahkan hubungi Kami</h2>
+        </div>
+        <div class="form">
+            <form>
+                <label for="email" >Email</label><br>
+                <input type="text" id="email" name="email" required>
+            </form>
+        </div>
+        <div class="message">
+            <label for="message" >Pesan</label><br>
+            <textarea name="message" rows="5" cols="50" required></textarea>
+        </div>
+        <div class="kirim">
+            <button type="submit">Kirim</button>
+        </div>
+    </div>
+</body>
+</html>
