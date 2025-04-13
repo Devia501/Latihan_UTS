@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layout Grid Custom</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #333;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+    }
+
+    nav a:hover {
+      background-color: #f2f2f2;
+      color: #333;
+      border-radius: 5px;
+    }
+
+    /* Dropdown */
+    nav ul ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      z-index: 999;
+      min-width: 200px;
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+    }
+
+    nav ul ul li {
+      width: 200px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* Sub-dropdown (level 2) */
+    nav ul ul ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      background-color: #333;
+    }
+
+    nav ul ul li:hover > ul {
+      display: block;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+      max-width: 1300px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .box {
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .box img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .box1, .box2, .box3 {
+      grid-column: span 4;
+    }
+
+    .box4 {
+      grid-column: 5 / span 4;
+    }
+
+    .box5 {
+      grid-column: 4 / span 3;
+    }
+
+    .box6 {
+      grid-column: 7 / span 3;
+    }
+
+    .box7 {
+      grid-column: 1 / span 4;
+    }
+
+    .box8 {
+      grid-column: 9 / span 4;
+    }
+
+    .cta {
+      background-color: #f44336;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .box {
+        grid-column: span 2 !important;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ujian Tengah Semester PPW 2023</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li>
+          <a href="#">Tentang Kami</a>
+          <ul>
+            <li><a href="#">Sejarah</a></li>
+            <li><a href="#">Visi dan Misi</a></li>
+            <li>
+              <a href="#">Struktur Organisasi</a>
+              <ul>
+                <li><a href="#">Direktur Utama</a></li>
+                <li><a href="#">Direktur Keuangan</a></li>
+                <li><a href="#">Direktur Pemasaran</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Layanan</a>
+          <ul>
+            <li><a href="#">Pengembangan Web</a></li>
+            <li><a href="#">Jaringan Komputer</a></li>
+            <li><a href="#">Sistem Informasi</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="grid-container">
+    <!-- Baris 1 -->
+    <div class="box box1">
+      <img src="https://via.placeholder.com/150" alt="Box 1" />
+      <h3>Judul Box 1</h3>
+      <a href="#" class="cta">Beli Sekarang</a>
+    </div>
+
+    <div class="box box2">
+      <img src="https://via.placeholder.com/150" alt="Box 2" />
+      <h3>Judul Box 2</h3>
+      <a href="#" class="cta">Beli Sekarang</a>
+    </div>
+
+    <div class="box box3">
+      <img src="https://via.placeholder.com/150" alt="Box 3" />
+      <h3>Judul Box 3</h3>
+      <a href="#" class="cta">Beli Sekarang</a>
+    </div>
+
+    <!-- Baris 2 -->
+    <div class="box box4">
+      <img src="https://via.placeholder.com/250" alt="Box 4" />
+      <h3 style="color: darkolivegreen;">Judul Box 4</h3>
+      <p>Deskripsi singkat box 4.</p>
+      <a href="#" class="cta" style="background-color: blue;">Beli Sekarang</a>
+    </div>
+
+    <!-- Baris 3 -->
+    <div class="box box5">
+      <img src="https://via.placeholder.com/350" alt="Box 5" />
+      <h3 style="color: purple;">Judul Box 5</h3>
+      <p>Deskripsi singkat box 5.</p>
+      <a href="#" class="cta">Beli Sekarang</a>
+    </div>
+
+    <div class="box box6">
+      <img src="https://via.placeholder.com/450" alt="Box 6" />
+      <h3>Judul Box 6</h3>
+      <p>Deskripsi singkat box 6.</p>
+      <a href="#" class="cta">Beli Sekarang</a>
+    </div>
+
+    <!-- Baris 4 -->
+    <div class="box box7">
+      <img src="https://via.placeholder.com/550" alt="Box 7" />
+      <h3>Judul Box 7</h3>
+      <p>Deskripsi singkat box 7.</p>
+      <a href="#" class="cta">Beli Sekarang</a>
+    </div>
+
+    <div class="box box8">
+      <img src="https://via.placeholder.com/550" alt="Box 8" />
+      <h3>Judul Box 8</h3>
+      <p>Deskripsi singkat box 8.</p>
+      <a href="#" class="cta">Beli Sekarang</a>
+    </div>
+  </div>
+
+</body>
+</html>
